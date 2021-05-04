@@ -29,9 +29,9 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                <input id="identify" type="email" class="form-control @error('identify') is-invalid @enderror" name="identify" value="{{ old('identify') }}" required>
 
-                                @error('email')
+                                @error('identify')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -66,6 +66,10 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
+                            </div>
+
+                            <div class="col-md-6 offset-md-4">
+                                <a href="{{url('redirect/facebook')}}">Login With Facebook</a>
                             </div>
                         </div>
                     </form>

@@ -16,11 +16,19 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes(['verify'=>true]);
 
-Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
+Route::get('/home', 'HomeController@index')//->name('home')->middleware('verified')
+;
 
 Route::get('/welcome',function (){
    return view('landing') ;
 });
+
+
+
+
+Route::get('/redirect/{service}','SocialController@redirect');
+
+
 
 //Route::get('login',function (){
 //    return 'سجل الاول';
@@ -30,6 +38,8 @@ Route::get('/welcome',function (){
 Route::get('/', function () {
     return view('welcome');
 });
+
+
 
 /*
 //Important
